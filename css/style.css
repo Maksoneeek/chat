@@ -600,7 +600,7 @@ body, html {
 .content-chat-content {
   padding: 0 25px;
   background: url(../img/pattern.png);
-  background-color: #f0f1f2;
+  background-color: red;
 }
 
 .content-chat-content__message {
