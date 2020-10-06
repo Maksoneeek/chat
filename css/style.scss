@@ -39,6 +39,27 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 body,html{
 	font-family: 'Montserrat',;
+	/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+	width: 3px; /* ширина для вертикального скролла */
+	height: 140px; /* высота для горизонтального скролла */
+	background: transparent;
+	position: relative;
+	
+  }
+  
+  /* ползунок скроллбара */
+  ::-webkit-scrollbar-thumb {
+	width: 3px;
+	height: 140px;
+	border-radius: 1px;
+	background-color: #dbe0e4;
+	position: absolute;
+	right: 4px;
+  }
+  .scrollar-viewport { overflow: scroll; }
+	.scrollar-viewport { clip: rect(0, auto, auto, 0); clip: rect(0 100% 100% 0); }
+
 }
 
 .chat {
@@ -128,6 +149,12 @@ padding: 117px 0 0 163px;
 }
 .list-chat {
 	flex: 0 0 333px;
+	&__scroll{
+		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 760px;
+		position: relative;
+	}
 }
 .header-list-chat {
 	display: flex;
@@ -368,7 +395,7 @@ background-color: #ffffff;
 	}
 }
 .chat-item {
-
+position: relative;
 	&__content {
 	}
 
@@ -474,7 +501,7 @@ background-color: #ffffff;
 .content-chat-content {
 padding: 0 25px;
 background: url(../img/pattern.png);
-background-color: red;
+background-color: #f0f1f2;
 	&__message {
 		padding: 10px 0;
 		display: flex;
@@ -579,3 +606,93 @@ background-color: red;
 		margin: 0 0 0 6px;
 	}
 }
+.popup-new {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+display: none;
+&.open{
+	display: block;
+}
+
+	&__content {
+		width: 600px;
+		height: 212px;
+		box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+		border: 1px solid #e5e5e5;
+		background-color: #ffffff;
+	}
+
+	&__header {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		height: 55px;
+		padding: 0 0 0 31px;
+		box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+	}
+
+	&__icon {
+		margin: 0 15px 0 0;
+
+	}
+	&__templates{
+		border-radius: 8px;
+		border: 1px solid #909090;
+		background-color: #f6f6f6;
+		width: 122px;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		color: #222222;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.06px;
+	}
+
+	&__form {
+		padding: 25px 0 0 31px;
+
+	}
+
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 35px;
+		&:last-child{
+			margin: 0;
+		}
+	}
+
+	&__input {
+		input{
+			color: #c3c3c3;
+			font-size: 13px;
+			font-weight: 500;
+
+			height: 12px;
+		}
+		height: 24px;
+		border-bottom: 1px solid #000000;
+		&_s {
+			flex: 0 1 386px;
+			margin: 0 30px 0 0;
+		}
+
+		&_b {
+			flex: 0 1 508px;
+			margin: 0 10px 0 0;
+		}
+		&_bi{
+			width: 508px;
+		}
+		&_si{
+			width: 386px;
+		}
+	}
+}
+
