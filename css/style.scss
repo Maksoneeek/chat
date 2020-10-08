@@ -45,7 +45,7 @@ body,html{
 	height: 140px; /* высота для горизонтального скролла */
 	background: transparent;
 	position: relative;
-	
+	background-color: transparent;
   }
   
   /* ползунок скроллбара */
@@ -61,10 +61,12 @@ body,html{
 	.scrollar-viewport { clip: rect(0, auto, auto, 0); clip: rect(0 100% 100% 0); }
 
 }
-
+.wrapper{
+	padding: 117px 0 0 163px;
+}
 .chat {
-padding: 117px 0 0 163px;
-
+padding: 0 0 0 57px;
+position: relative;
 	&__letters {
 	}
 
@@ -74,6 +76,8 @@ padding: 117px 0 0 163px;
 
 	&__row {
 		display: flex;
+		max-width: 1269px;
+		
 	}
 	&__item{
 		flex: 0 1 933px;
@@ -83,6 +87,9 @@ padding: 117px 0 0 163px;
 }
 .letters-chat {
 	width: 19px;
+	position: absolute;
+	left: 20px;
+	top: 60px;
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -152,8 +159,10 @@ padding: 117px 0 0 163px;
 	&__scroll{
 		overflow-y: scroll;
 		overflow-x: hidden;
-		height: 760px;
+		height: 748px;
 		position: relative;
+		border-radius: 0px 0 0px 10px;
+		border-bottom: 2px solid #f1f2f3;
 	}
 }
 .header-list-chat {
@@ -162,7 +171,8 @@ padding: 117px 0 0 163px;
 	align-items: center;
 	height: 44px;
 	padding: 0 25px;
-	box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+	border: 2px solid #f1f2f3;
+	border-radius: 10px 0 0px 0px;
 	&__title {
 		color: #222222;
 		font-size: 14px;
@@ -197,7 +207,7 @@ padding: 117px 0 0 163px;
 padding: 0 0 0 18px;
 height: 84px;
 display: flex;
-
+cursor: pointer;
 align-items: center;
 position: relative;
 background-color: #ffffff;
@@ -270,6 +280,7 @@ background-color: #ffffff;
 		width: 5px;
 		background-color: #c44475;
 	}
+
 } 
 .wp {
 	color: #28a219;
@@ -359,13 +370,14 @@ background-color: #ffffff;
 
 .header-item-chat {
 	height: 44px;
-	box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
 	background-color: #ffffff;
 	padding:0 25px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	border: 2px solid #f1f2f3;
+	border-left: none;
+	border-radius: 0px 10px 0px 0px;
 	&__body {
 		display: flex;
 	align-items: center;
@@ -389,7 +401,7 @@ background-color: #ffffff;
 			font-weight: 500;
 			margin: 0 9px 0 0;
 		}
-
+		cursor: pointer;
 		&_icon {
 		}
 	}
@@ -408,10 +420,11 @@ position: relative;
 }
 .footer-chat-item {
 	height: 68px;
-	box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
 	background-color: #ffffff;
 	display: flex;	
 	align-items: center;
+	border: 2px solid #f1f2f3;
+	border-radius: 0px 0 10px 0px;
 	padding: 0 25px 0 35px;
 	form{
 		display: flex;
@@ -475,6 +488,8 @@ position: relative;
 		display: flex;
 		align-items: center;
 		height: 100%;
+		cursor: pointer;
+		
 		&_icon {
 			margin: 0 7px 0 0;
 			path{
@@ -502,6 +517,7 @@ position: relative;
 padding: 0 25px;
 background: url(../img/pattern.png);
 background-color: #f0f1f2;
+overflow-y: scroll;
 	&__message {
 		padding: 10px 0;
 		display: flex;
