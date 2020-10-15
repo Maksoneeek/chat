@@ -1,7 +1,10 @@
 
 $(document).ready(function () {
-    $('.header-list-chat__icon').click(function (event) {
+    $('.new-chat').click(function (event) {
         $('.popup-new').toggleClass('open');    
+    });
+    $('.chats').click(function (event) {
+        $('.list-chat__scroll').toggleClass('open');    
     });
 });
 

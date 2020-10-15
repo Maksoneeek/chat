@@ -230,6 +230,13 @@ body .scrollar-viewport, html .scrollar-viewport {
   position: relative;
   border-radius: 0px 0 0px 10px;
   border-bottom: 2px solid #f1f2f3;
+  display: none;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.list-chat__scroll.open {
+  display: block;
 }
 
 .header-list-chat {
@@ -437,8 +444,8 @@ body .scrollar-viewport, html .scrollar-viewport {
   position: relative;
 }
 
-.icon_new::after, .icon_new::before {
-  content: '2';
+.icon span {
+  position: absolute;
   color: #ffffff;
   font-family: Montserrat;
   font-size: 10px;
@@ -459,11 +466,32 @@ body .scrollar-viewport, html .scrollar-viewport {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  right: -3px;
+  bottom: -3px;
 }
 
-.icon_new::after {
-  right: -4px;
-  bottom: -4px;
+.icon_new::before {
+  content: '';
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffffff;
+  background-color: #c44475;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
 }
 
 .icon_new::before {
