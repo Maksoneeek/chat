@@ -589,17 +589,22 @@ position: relative;
 		align-items: center;
 		height: 100%;
 		cursor: pointer;
-		
+		&:hover{
+			.footer-chat-item__templates_icon{
+				path{
+					fill: url(#SVGID_1_);
+				}
+			}
+			.footer-chat-item__templates_text{
+				color: #222222;
+			}
+		}
 		&_icon {
 			margin: 0 7px 0 0;
 			path{
 				fill: #c3c3c3;
 			}
-			&:hover{
-				path{
-					fill: url(#SVGID_1_);
-				}
-			}
+
 		}
 
 		&_text {
@@ -879,6 +884,111 @@ display: none;
 		&_si{
 			width: 386px;
 		}
+	}
+}
+.templates {
+position: absolute;
+bottom: 66px;
+right: 10px;
+width: 554px;
+height: 430px;
+box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+border: 1px solid #e5e5e5;
+background-color: #ffffff;
+overflow-y: scroll;
+display: none;
+&.open{
+	display: block;
+}
+	&__header {
+		height: 56px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 26px;
+		border-bottom: 1px solid #e2e5e7;
+	}
+
+	&__title {
+		font-size: 13px;
+		font-weight: 500;
+		color: #222222;
+	}
+
+	&__search {
+		div{
+			display: flex;
+			align-items: center;
+			input{
+				color: #c3c3c3;
+				font-size: 13px;
+				width: 143px;
+				height: 13px;
+			}
+			button{
+				color: transparent;
+				background-color: transparent;
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+
+	&__content {
+		padding: 15px 16px;
+
+	}
+
+	&__line {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 0;
+	}
+
+	&__name {
+		font-size: 13px;
+		font-weight: 500;
+		color: #777777;
+		max-width: 97px;
+
+	}
+
+	&__item {
+		color: #222222;
+		font-size: 13px;
+		padding: 14px 16px;
+		border-radius: 8px;
+		border: 1px solid #e5e5e5;
+		background-color: #f1ffef;
+		width: 412px;
+		display: flex;
+		cursor: pointer;
+		img{
+			margin: 0 15px 0 0;
+		}
+
+		&_b {
+			flex-direction: column;
+		}
+	}
+
+	&__btns {
+		margin: 12px 0 0 0;
+		display: flex;
+	}
+
+	&__btn {
+		&:first-child{
+			margin: 0 10px 0 0;
+		}
+		width: 168px;
+		height: 33px;
+		border-radius: 3px;
+		background-color: #dbe0e4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 	}
 }
 
