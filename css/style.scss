@@ -494,7 +494,15 @@ background-color: #ffffff;
 	}
 
 	&__info {
-
+		cursor: pointer;
+		path{
+			fill:#c3c3c3;
+		}
+		&:hover{
+			path{
+				fill: url(#SVGID_1_);
+			}
+		}
 	}
 
 	&__exit {
@@ -514,6 +522,7 @@ background-color: #ffffff;
 }
 .chat-item {
 position: relative;
+overflow-x: hidden;
 	&__content {
 	}
 
@@ -629,6 +638,7 @@ padding: 0 25px;
 background: url(../img/pattern.png);
 background-color: #f0f1f2;
 overflow-y: scroll;
+transition: 0.3s ease;
 	&__message {
 		padding: 10px 0;
 		display: flex;
@@ -1351,6 +1361,7 @@ svg {
 }
 }
 .checkbox{
+	cursor: pointer;
 	input{
 		display: none;
 	}
@@ -1402,4 +1413,133 @@ svg {
 			right: 1px;
 		}
 	}
+}
+.info {
+	position: absolute;
+	top: 44px;
+	width: 262px;
+	height: 690px;
+	background-color: #ffffff;
+	padding: 12px 0 0 0px;
+	right: -100%;
+	transition: 0.3s ease;
+	z-index: 2;
+	&.open{
+		right: 2px;
+	}	
+	&__block {
+		padding: 40px 0 40px 35px ;
+		border-bottom: 1px solid  #f1f2f3;
+		&:last-child{
+			border: none;
+		}
+		&_title {
+			color: #222222;
+			font-size: 13px;
+			margin-bottom: 17px;
+		}
+	}
+
+	&__icon {
+		span{
+			position: absolute;
+			left: 50%;
+			top:50%;
+			transform: translate(-50%,-50%);
+			color: #ffffff;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: #28a219;
+		position: relative;
+		left: calc(50% - 16px);
+		transform: translate(-50%,0);
+		margin-bottom: 32px;
+	}
+
+	&__line {
+		flex-direction: column;
+	}
+
+	&__name {
+		margin-bottom: 12px;
+	}
+
+	&__number {
+		font-size: 14px;
+		color: #370954;
+		font-weight: 600;
+		padding: 0;
+		&::before{
+			display: none;
+		}
+	}
+
+	&__messenger {
+	}
+
+	&__label {
+		display: flex;
+		margin-bottom: 30px;
+		cursor: pointer;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&_icon {
+			margin: 0 13px 0 0;
+			width: 14px;
+			display: flex;
+			justify-content: center;
+			height: 7px;
+			transform: translate(0,6px);
+		}
+
+		&_text {
+			font-size: 13px;
+			color: #222222;
+			max-width: 143px;
+			line-height: 20px;
+		}
+
+		&_text-pink {
+			font-size: 13px;
+			color: #c44475;
+			max-width: 141px;
+		}
+	}
+
+	&__form {
+	}
+
+	&__checkbox {
+		margin-bottom: 20px;
+		
+		&_item {
+			margin: 0 13px 0 0;
+
+		}
+
+		&_text {
+			font-size: 13px;
+			color: #222222;
+			margin: 0 9px 0 0;
+		}
+		&_line{
+			display: flex;
+			align-items: center;
+		}	
+
+		&_icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+.info-pad{
+	padding: 0 287px 0 25px;
 }

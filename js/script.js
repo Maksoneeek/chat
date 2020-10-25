@@ -9,6 +9,10 @@ $(document).ready(function () {
     $('.settings-open').click(function (event) {
         $('.settings').toggleClass('open');
     });
+    $('.info-open').click(function (event) {
+        $('.info').toggleClass('open');
+        $('.content-chat-content').toggleClass('info-pad');
+    });
     $('.new-templates-open').click(function (event) {
         $('.new-templates').toggleClass('open');
         $('.settings').removeClass('open');
