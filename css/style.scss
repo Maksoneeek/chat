@@ -971,6 +971,7 @@ display: none;
 		cursor: pointer;
 		img{
 			margin: 0 15px 0 0;
+			max-height: 89px;
 		}
 
 		&_b {
@@ -1039,7 +1040,11 @@ display: none;
 	&__form{
 		margin: 0 15px 0 0;
 	}
-
+	&__checkbox{
+		&_item{
+			margin: 0 15px 0 0;
+		}
+	}
 	&__header-bot {
 		height: 57px;
 		display: flex;
@@ -1125,6 +1130,7 @@ display: none;
 	&__body {
 		padding: 20px 26px;
 		height: 464px;
+		position: relative;
 	}
 
 	&__line {
@@ -1132,7 +1138,9 @@ display: none;
 		justify-content: space-between;
 		align-items: flex-end;
 		&_end{
-			height: calc(100% - 210px);
+			position: absolute;
+			bottom: 28px;
+			width: calc(100% - 52px) ;
 		}
 	}
 
@@ -1166,6 +1174,15 @@ display: none;
 			color: #c3c3c3;
 			width: 100%;
 			padding: 0 0 10px 13px;
+		}
+		textarea{
+			font-size: 13px;
+			font-weight: 500;
+			height: 26px;
+			color: #c3c3c3;
+			width: 100%;
+			padding: 0 0 10px 13px;
+			resize: none;
 		}
 		border-bottom: 1px solid #909090;
 		&:first-child{
@@ -1333,4 +1350,56 @@ svg {
     color: #000;
 }
 }
-
+.checkbox{
+	input{
+		display: none;
+	}
+	display: flex;
+	align-items: center;
+	&__item{
+		position: relative;
+		width: 33px;
+		height: 18px;
+		cursor: pointer;
+		&::before{
+			content: '';
+			width: 33px;
+			height: 18px;
+			border: 2px solid rgba(255, 255, 255, 0.18);
+			border-radius: 10px;
+			background-color: #dbe0e4;
+			display: block;
+			position: absolute;
+		}
+		&::after{
+			content: '';
+			width: 16px;
+			height: 16px;
+			box-shadow: 0 5px 5px rgba(0, 0, 0, 0.13);
+			background-color: #ffffff;
+			border-radius: 50%;
+			display: block;
+			position: absolute;;
+			right: 15px;
+			top: 1px;
+			transition: 0.3s ease;
+		}		
+		&_check{
+			position: absolute;
+			left: 4px;
+			top: 6px;
+		}	
+		&_notcheck{
+			position: absolute;
+			right:  5px;
+			top: 6px;
+		}
+	}
+}
+.checkbox.active{
+	.checkbox__item{
+		&::after{
+			right: 1px;
+		}
+	}
+}

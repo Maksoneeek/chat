@@ -1246,6 +1246,7 @@ body .scrollar-viewport, html .scrollar-viewport {
 
 .templates__item img {
   margin: 0 15px 0 0;
+  max-height: 89px;
 }
 
 .templates__item_b {
@@ -1335,6 +1336,10 @@ body .scrollar-viewport, html .scrollar-viewport {
 }
 
 .settings__form {
+  margin: 0 15px 0 0;
+}
+
+.settings__checkbox_item {
   margin: 0 15px 0 0;
 }
 
@@ -1449,6 +1454,7 @@ body .scrollar-viewport, html .scrollar-viewport {
 .new-templates__body {
   padding: 20px 26px;
   height: 464px;
+  position: relative;
 }
 
 .new-templates__line {
@@ -1464,7 +1470,9 @@ body .scrollar-viewport, html .scrollar-viewport {
 }
 
 .new-templates__line_end {
-  height: calc(100% - 210px);
+  position: absolute;
+  bottom: 28px;
+  width: calc(100% - 52px);
 }
 
 .new-templates__frame {
@@ -1507,6 +1515,16 @@ body .scrollar-viewport, html .scrollar-viewport {
   color: #c3c3c3;
   width: 100%;
   padding: 0 0 10px 13px;
+}
+
+.new-templates__input textarea {
+  font-size: 13px;
+  font-weight: 500;
+  height: 26px;
+  color: #c3c3c3;
+  width: 100%;
+  padding: 0 0 10px 13px;
+  resize: none;
 }
 
 .new-templates__input:first-child {
@@ -1691,5 +1709,68 @@ body .scrollar-viewport, html .scrollar-viewport {
 .__select__label:hover {
   background-color: #f5f5f5 !important;
   color: #000;
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox__item {
+  position: relative;
+  width: 33px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox__item::before {
+  content: '';
+  width: 33px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background-color: #dbe0e4;
+  display: block;
+  position: absolute;
+}
+
+.checkbox__item::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.13);
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 1px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.checkbox__item_check {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+}
+
+.checkbox__item_notcheck {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+}
+
+.checkbox.active .checkbox__item::after {
+  right: 1px;
 }
 /*# sourceMappingURL=style.css.map */
