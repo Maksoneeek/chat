@@ -11,6 +11,7 @@ $(document).ready(function () {
     });
     $('.info-open').click(function (event) {
         $('.info').toggleClass('open');
+        $('.content-chat-content').toggleClass('hidden');
         $('.content-chat-content').toggleClass('info-pad');
     });
     $('.new-templates-open').click(function (event) {

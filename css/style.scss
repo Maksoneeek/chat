@@ -634,18 +634,19 @@ overflow-x: hidden;
 
 
 .content-chat-content {
-padding: 0 25px;
+padding: 15px 25px;
 background: url(../img/pattern.png);
 background-color: #f0f1f2;
 overflow-y: scroll;
 transition: 0.3s ease;
+display: flex;
+flex-direction: column-reverse;
 	&__message {
 		padding: 10px 0;
 		display: flex;
 		&_container{
-			max-width: 433px;
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 		}
 	}
 	
@@ -678,7 +679,79 @@ transition: 0.3s ease;
 		font-weight: 500;
 		letter-spacing: 0.06px;
 	}
+	&__img{
+		img{
+			max-width: 100%;
+			object-fit: cover;
+		}
+	}
+	&__file{
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&_icon{
+			width: 40px;
+			height: 40px;
+			background-color: rgba(219,224,228,0.5);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			margin: 0 10px 0 0;
+		}
+		&_name{
+			font-weight: 400;
+			font-size: 12px;
+			color: #222222;
+			letter-spacing: 0.3px;
+		}
+		&_size{
+			font-size: 12px;
+			font-weight: 500;
+			color: #c3c3c3;
+			letter-spacing: 0.12px;
 
+		}
+	}
+	&__audio{
+		display: flex;
+		align-items: center;
+		&_icon{
+			width: 32px;
+			height: 32px;
+			background-color: rgba(219,224,228,0.5);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			margin: 0 10px 0 0;
+			cursor: pointer;
+		}
+		&_line{
+			width: 224px;
+			height: 2px;
+			border-radius: 1px;
+			background-color: #dbe0e4;
+			position: relative;
+			margin: 0 10px 0 0;
+			cursor: pointer;
+			&::before{
+				content: '';
+				display: block;
+				width: 4px;
+				height: 4px;
+				background-color: #c44475;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: -1px;
+			}
+			&_time{
+				font-size: 12px;
+				color: #222222;
+			}
+		}
+	}
 	&__item {
 		border: 1px solid #e5e5e5;
 		background-color: #ffffff;
@@ -707,6 +780,16 @@ transition: 0.3s ease;
 			z-index: 2;
 			left: -11px;
 			
+		}
+		&_big{
+			max-width: 468px;
+			padding: 11px;
+			video {
+				width: 100%;
+				height: auto;
+				max-height: 100%;
+				width: 385px;
+			  }
 		}
 	}
 }
@@ -978,10 +1061,11 @@ display: none;
 		background-color: #f1ffef;
 		width: 412px;
 		display: flex;
+		align-items: flex-start;
 		cursor: pointer;
 		img{
 			margin: 0 15px 0 0;
-			max-height: 89px;
+			max-width: 79px;	
 		}
 
 		&_b {
@@ -1205,6 +1289,9 @@ display: none;
 	&__item{
 		width: 100%;
 		padding: 11px 12px;
+		max-height: 180px;
+		overflow-y: scroll;
+
 	}
 
 	&__back {
@@ -1415,6 +1502,7 @@ svg {
 	}
 }
 .info {
+	overflow-y: scroll;
 	position: absolute;
 	top: 44px;
 	width: 262px;
@@ -1542,4 +1630,7 @@ svg {
 
 .info-pad{
 	padding: 0 287px 0 25px;
+}
+.hidden{
+	overflow: hidden;
 }
