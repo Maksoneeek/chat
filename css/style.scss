@@ -894,6 +894,15 @@ flex-direction: column-reverse;
 			border-left:12px solid  #ffffff;;
 		}
 	}
+	.content-chat-content__nosend_item{
+		right: auto;
+		left: -31px;
+	}
+	.content-chat-content__nosend{
+		&::before{
+			border-left:12px solid  #ffcdda;
+		}
+	}
 }
 .checked{
 	&::after{
@@ -2043,4 +2052,52 @@ position: relative;
 			fill: url(#SVGID_1_);
 		}
 	}
+}
+.content-chat-content {
+
+
+
+	&__nosend {
+		background-color: #ffcdda;
+		&::before{
+			border-right: 12px solid #ffcdda;
+		}
+		&_text {
+		}
+
+		&_item {
+			position: absolute;
+			right: -31px;
+			top:50%;
+			transform: translate(0,-50%);
+			&:hover{
+				.content-chat-content__nosend_img{
+					opacity: 0;
+					visibility: hidden;
+				}
+				.content-chat-content__nosend_resend{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		&_img {
+			transition: 0.3s ease;
+		}
+		&_resend {
+			transition: 0.3s ease;
+			position: absolute;
+			left: 2px;
+			top: 0;
+			opacity: 0;
+			visibility: hidden;
+			cursor: pointer;
+		}	
+	}
+
+}
+.sender {
+}
+.icon {
 }
