@@ -562,8 +562,8 @@ overflow-x: hidden;
 		align-items: center;
 		textarea{
 			width: 572px;
-			height: 13px;
 			resize: none;
+			max-height: 45px;
 		}
 		textarea::-webkit-scrollbar{
 			width: 0;
@@ -572,7 +572,7 @@ overflow-x: hidden;
 
 	&__icons {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 	}
 
 	&__button {
@@ -1924,5 +1924,8 @@ position: relative;
 		border-radius: 50%;
 		justify-content: center;
 		align-items: center;
+		path{
+			fill: url(#SVGID_1_);
+		}
 	}
 }
