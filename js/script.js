@@ -5,6 +5,11 @@ $(document).ready(function () {
     });
     $('.templates-open').click(function (event) {
         $('.templates').toggleClass('open');
+        $('.templates').removeClass('templates-2');
+    });
+    $('.templates-open-2').click(function (event) {
+        $('.templates').toggleClass('open');
+        $('.templates').toggleClass('templates-2');
     });
     $('.micro__icon-1').click(function (event) {
         $('.micro__two-item').toggleClass('open');

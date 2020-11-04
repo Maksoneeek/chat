@@ -40,6 +40,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body,html{
 	font-family: 'Montserrat',;
 	/* полоса прокрутки (скроллбар) */
+}
+.wrapper{
+	padding: 117px 0 0 163px;
+
+}
+.chat {
+padding: 0 0 0 57px;
+position: relative;
+transition: 0.3s ease;
 ::-webkit-scrollbar {
 	width: 3px; /* ширина для вертикального скролла */
 	height: 140px; /* высота для горизонтального скролла */
@@ -59,15 +68,6 @@ body,html{
   }
   .scrollar-viewport { overflow: scroll; }
 	.scrollar-viewport { clip: rect(0, auto, auto, 0); clip: rect(0 100% 100% 0); }
-
-}
-.wrapper{
-	padding: 117px 0 0 163px;
-}
-.chat {
-padding: 0 0 0 57px;
-position: relative;
-transition: 0.3s ease;
 	&__letters {
 	}
 
@@ -667,7 +667,7 @@ overflow-x: hidden;
 
 .content-chat-content {
 padding: 15px 25px;
-background: url(../img/pattern.png);
+background: url(../img/Slice_2.png);
 background-color: #f0f1f2;
 overflow-y: scroll;
 transition: 0.3s ease;
@@ -866,6 +866,8 @@ flex-direction: column-reverse;
 	align-items: center;
 	height: 792px;
 	background-color: #f0f1f2;
+	border-radius: 0 10px 10px 0px;
+	position: relative;
 	&__body {
 		display: flex;
 		justify-content: center;
@@ -933,9 +935,12 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
-display: none;
+visibility: hidden;
+opacity: 0;
+transition: 0.3s ease;
 &.open{
-	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 
 	&__content {
@@ -1017,6 +1022,13 @@ display: none;
 		}
 	}
 }
+.templates-2{
+	right: auto;
+		bottom: auto;
+		left: 60px;
+		top: 50%;
+		transform: translate(0,-50%);
+}
 .templates {
 position: absolute;
 bottom: 66px;
@@ -1026,9 +1038,12 @@ height: 430px;
 box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
 border: 1px solid #e5e5e5;
 background-color: #ffffff;
-display: none;
+opacity: 0;
+visibility: hidden;
+transition: 0.3s ease;
 &.open{
-	display: block;
+	opacity: 1;
+	visibility:visible;
 }
 	&__header {
 		height: 56px;
@@ -1134,9 +1149,12 @@ height: 654px;
 box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
 border: 1px solid #e5e5e5;
 background-color: #ffffff;
-display: none;
+opacity: 0;
+visibility: hidden;
+transition: 0.3s ease;
 &.open{
-	display: block;
+	opacity: 1;
+	visibility:visible;
 }
 	&__header-top {
 		height: 55px;
@@ -1249,9 +1267,12 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
-display: none;
+opacity: 0;
+visibility: hidden;
+transition: 0.3s ease;
 &.open{
-	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 	&__body {
 		padding: 20px 26px;
@@ -1675,9 +1696,12 @@ border-radius: 10px;
 border: 1px solid #ebebeb;
 background-color: #f6f6f6;
 z-index: 2;
-display: none;
+opacity: 0;
+visibility: hidden;
+transition: 0.3s ease;
 &.open{
-	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 	&__content {
 		height: 720px;
@@ -1827,7 +1851,8 @@ display: none;
 			}
 			img{
 				max-width: 100%;
-
+				object-fit: cover;
+				max-height: 58px;
 			}
 		}
 
