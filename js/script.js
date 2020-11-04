@@ -99,3 +99,9 @@ $(document).ready(function () {
     });
 });
 
+var audio = $("#sound")[0];
+$(".content-chat-content__audio").mouseenter(function() {
+  audio.play();
+}).mouseleave(function() {
+  audio.pause();
+});
