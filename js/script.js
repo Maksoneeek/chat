@@ -6,6 +6,11 @@ $(document).ready(function () {
     $('.templates-open').click(function (event) {
         $('.templates').toggleClass('open');
     });
+    $('.micro__icon-1').click(function (event) {
+        $('.micro__two-item').toggleClass('open');
+        setTimer()
+    });
+
     $('.settings-open').click(function (event) {
         $('.settings').toggleClass('open');
     });
@@ -73,7 +78,7 @@ $(document).ready(function () {
     $('.preview-chat__slider-big').slick({
         arrows: true,
         slidesToShow: 1,
-        dots:false,
+        dots: false,
         asNavFor: '.preview-chat__slider-small_item',
     });
 });
@@ -81,10 +86,32 @@ $(document).ready(function () {
     $('.preview-chat__slider-small_item').slick({
         arrows: false,
         slidesToShow: 10,
-        dots:false,
-        focusOnSelect:true,
+        dots: false,
+        focusOnSelect: true,
         asNavFor: '.preview-chat__slider-big',
-        useCSS:'false',
-        useTransform:false,
+        useCSS: 'false',
+        useTransform: false,
     });
 });
+
+function setTimer() {
+    let time = 0
+    const timerInput = document.querySelector('.micro__timer')
+    timerInput.style.fontSize = 18 + 'px'
+    const timer = setInterval(function () {
+        time = time + 1
+        let mins = Math.floor(time / 60)
+        let seconds = time % 60
+        if (seconds < 10) {
+            seconds = '0' + seconds
+        }
+        timerInput.textContent = `${mins}:${seconds}`
+        if (time == 0) {
+            clearInterval(timer)
+            timerInput.style.fontSize = 0
+            document.querySelector('.popup__restart').style.fontSize = 12 + 'px'
+            document.querySelector('.popup__restart').addEventListener('click', restartTimer)
+        }
+    }, 1000)
+    alert('End!');
+}
