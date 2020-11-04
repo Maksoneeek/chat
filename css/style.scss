@@ -563,11 +563,40 @@ overflow-x: hidden;
 		textarea{
 			width: 572px;
 			resize: none;
-			max-height: 45px;
+			height: 13px;
+			max-height: 45px; 
 		}
 		textarea::-webkit-scrollbar{
 			width: 0;
 		}
+
+		&_template {
+			display: flex;
+			align-items: flex-end;
+			display: none;
+		}
+	
+		&_img {
+			max-width: 54px;
+			max-height: 38px;
+			img{
+				max-width:100%;
+				object-fit: cover;
+			}
+			margin: 0 14px 0 0;
+			position: relative;
+		}
+	
+		&_text {
+			width: 486px;
+			font-size: 13px;
+			color: #222222;
+			line-height: 16px;
+			height: 45px;
+			overflow-y: scroll;
+
+		}
+			
 	}
 
 	&__icons {
@@ -630,6 +659,9 @@ overflow-x: hidden;
 		}
 
 	}
+}
+.footer-chat-item__input_text::-webkit-scrollbar{
+	width: 0;
 }
 
 
@@ -1814,26 +1846,37 @@ display: none;
 }
 .smile{
 	position: relative;
+	&__text{
+		position: relative;
+		z-index: 55555;
+	}
 	&:hover{
 		.smile-item{
 			opacity: 1;
 			visibility: visible;
 		}	
+		.micro__first-item{
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 	.smile-item{
 		width: 336px;
 		height: 224px;
 		overflow-y: scroll;
-		background-color: #ffffff;
+		overflow-x: hidden;
+		opacity: 0;
+		visibility: hidden;
 		position: absolute;
 		top: -244px;
 		left: -140px;
-		opacity: 0;
-		visibility: hidden;
 		transition: 0.3s ease;
-		
+		box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+		border: 1px solid #e5e5e5;
+		background-color: #ffffff;
 	}
 }
+
 .micro {
 position: relative;
 &:hover{
