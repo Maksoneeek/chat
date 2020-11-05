@@ -749,12 +749,27 @@ flex-direction: column-reverse;
 	&__audio{
 		display: flex;
 		align-items: center;
+		position: relative;
+		&::before{
+			content: '';
+			width: 75px;
+			height: 62px;
+			background-color: transparent;
+			position: absolute;
+			right: 0;
+			z-index: 2;
+		}
 		audio {
 			width: 310px;
 			height: 30px;
 			background-color: #ffffff;
 			border-radius: 0;
 			color: transparent;
+			position: relative;
+		}	
+		audio::-webkit-media-controls-panel{
+			background-color: #ffffff;
+
 		}
 		audio::-webkit-media-controls-play-button{
 			display: block;
@@ -771,22 +786,42 @@ flex-direction: column-reverse;
 			
 		}
 		audio::-webkit-media-controls-current-time-display{
-			
+			position: absolute;
+			right: 36px;
+			background-color: white;
+			z-index: 2;
+			font-size: 12px;
+		}
+		audio::-webkit-media-controls-time-remaining-display{
+			position: absolute;
+			right: 0px;
+			background-color: white;
+			z-index: 2;
+			font-size: 12px;
 		}
 		audio::-webkit-media-controls-mute-button{
 			display: none;
 		}
 		audio::-webkit-media-controls-timeline{
 			width: 224px;
-			
+			padding: 0;
 		}
 		audio::-webkit-media-controls-seek-back-button{
-			height: 30px;
+			display: none;
 		}
-		audio::-webkit-media-controls-seek-forward-button{
-			height: 30px;
+		audio::-webkit-media-controls-toggle-closed-captions-button{
+			display: none;
 		}
-
+		audio::-webkit-media-controls-rewind-button{
+			display: none;
+		}
+		audio::-webkit-media-controls-volume-container{
+			display: none;
+			width: 0px;
+		}
+		audio::-webkit-media-controls-volume-slider{
+			
+		}
 		&_icon{
 			width: 32px;
 			height: 32px;
@@ -807,6 +842,14 @@ flex-direction: column-reverse;
 			position: relative;
 			margin: 0 10px 0 0;
 			cursor: pointer;
+			&_time{
+				font-size: 12px;
+				color: #222222;
+				display: none;
+			}
+			display: none;
+		}
+		&_line-control{
 			&::before{
 				content: '';
 				display: block;
@@ -818,12 +861,6 @@ flex-direction: column-reverse;
 				left: 0;
 				top: -1px;
 			}
-			&_time{
-				font-size: 12px;
-				color: #222222;
-				display: none;
-			}
-			display: none;
 		}
 		&_time{
 			font-size: 12px;
@@ -1085,6 +1122,18 @@ transition: 0.3s ease;
 		top: 50%;
 		transform: translate(0,-50%);
 }
+.close{
+	position: absolute;
+	right: 4px;
+	top: 5px;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
 .templates {
 position: absolute;
 bottom: 66px;
@@ -1101,6 +1150,7 @@ transition: 0.3s ease;
 	opacity: 1;
 	visibility:visible;
 }
+
 	&__header {
 		height: 56px;
 		display: flex;
@@ -1273,6 +1323,8 @@ transition: 0.3s ease;
 			display: flex;
 			align-items: center;
 			cursor: pointer;
+			position: relative;
+			z-index: 5;
 			svg{
 				margin: 0 10px 0 0;
 			}

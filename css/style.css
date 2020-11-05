@@ -971,6 +971,17 @@ body, html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.content-chat-content__audio::before {
+  content: '';
+  width: 75px;
+  height: 62px;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  z-index: 2;
 }
 
 .content-chat-content__audio audio {
@@ -979,6 +990,11 @@ body, html {
   background-color: #ffffff;
   border-radius: 0;
   color: transparent;
+  position: relative;
+}
+
+.content-chat-content__audio audio::-webkit-media-controls-panel {
+  background-color: #ffffff;
 }
 
 .content-chat-content__audio audio::-webkit-media-controls-play-button {
@@ -998,20 +1014,46 @@ body, html {
   cursor: pointer;
 }
 
+.content-chat-content__audio audio::-webkit-media-controls-current-time-display {
+  position: absolute;
+  right: 36px;
+  background-color: white;
+  z-index: 2;
+  font-size: 12px;
+}
+
+.content-chat-content__audio audio::-webkit-media-controls-time-remaining-display {
+  position: absolute;
+  right: 0px;
+  background-color: white;
+  z-index: 2;
+  font-size: 12px;
+}
+
 .content-chat-content__audio audio::-webkit-media-controls-mute-button {
   display: none;
 }
 
 .content-chat-content__audio audio::-webkit-media-controls-timeline {
   width: 224px;
+  padding: 0;
 }
 
 .content-chat-content__audio audio::-webkit-media-controls-seek-back-button {
-  height: 30px;
+  display: none;
 }
 
-.content-chat-content__audio audio::-webkit-media-controls-seek-forward-button {
-  height: 30px;
+.content-chat-content__audio audio::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+}
+
+.content-chat-content__audio audio::-webkit-media-controls-rewind-button {
+  display: none;
+}
+
+.content-chat-content__audio audio::-webkit-media-controls-volume-container {
+  display: none;
+  width: 0px;
 }
 
 .content-chat-content__audio_icon {
@@ -1044,7 +1086,13 @@ body, html {
   display: none;
 }
 
-.content-chat-content__audio_line::before {
+.content-chat-content__audio_line_time {
+  font-size: 12px;
+  color: #222222;
+  display: none;
+}
+
+.content-chat-content__audio_line-control::before {
   content: '';
   display: block;
   width: 4px;
@@ -1054,12 +1102,6 @@ body, html {
   position: absolute;
   left: 0;
   top: -1px;
-}
-
-.content-chat-content__audio_line_time {
-  font-size: 12px;
-  color: #222222;
-  display: none;
 }
 
 .content-chat-content__audio_time {
@@ -1390,6 +1432,20 @@ body, html {
           transform: translate(0, -50%);
 }
 
+.close {
+  position: absolute;
+  right: 4px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.close img {
+  width: 100%;
+  height: 100%;
+}
+
 .templates {
   position: absolute;
   bottom: 66px;
@@ -1646,6 +1702,8 @@ body, html {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  position: relative;
+  z-index: 5;
 }
 
 .settings__header-bot_new-templates svg {

@@ -15,7 +15,18 @@ $(document).ready(function () {
         $('.micro__two-item').toggleClass('open');
         setTimer()
     });
-
+    $('.close-template').click(function (event) {
+        $('.templates').removeClass('open');
+    });
+    $('.close-new').click(function (event) {
+        $('.popup-new').removeClass('open');
+    });
+    $('.close-settings').click(function (event) {
+        $('.settings').removeClass('open');
+    });
+    $('.close-new-templates').click(function (event) {
+        $('.new-templates').removeClass('open');
+    });
     $('.settings-open').click(function (event) {
         $('.settings').toggleClass('open');
     });
@@ -99,9 +110,3 @@ $(document).ready(function () {
     });
 });
 
-var audio = $("#sound")[0];
-$(".content-chat-content__audio").mouseenter(function() {
-  audio.play();
-}).mouseleave(function() {
-  audio.pause();
-});
