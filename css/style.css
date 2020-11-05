@@ -163,26 +163,31 @@ body, html {
 
 .letters-chat__item:first-child {
   margin-bottom: 15px;
+  margin-left: 1.5px;
 }
 
-.letters-chat__item:first-child .letters-chat__item_grey img {
-  width: 16px;
-  height: 16px;
+.letters-chat__item:first-child .letters-chat__item_svg {
+  margin-right: 15px;
 }
 
-.letters-chat__item:first-child .letters-chat__item_hover img {
-  width: 16px;
-  height: 16px;
+.letters-chat__item:first-child path {
+  fill: #c3c3c3;
+}
+
+.letters-chat__item:first-child:hover path {
+  fill: url(#SVGID_1_);
+}
+
+.letters-chat__item:first-child .letters-chat__text {
+  color: #222222;
 }
 
 .letters-chat__item:nth-child(2) {
   margin-bottom: 13px;
-  margin-left: -1.5px;
 }
 
 .letters-chat__item:nth-child(3) {
   margin-bottom: 23px;
-  margin-left: -1.5px;
 }
 
 .letters-chat__item:hover .letters-chat__item_hover {
@@ -232,6 +237,14 @@ body, html {
 .letters-chat__item_round {
   margin-bottom: 15px;
   margin-left: 4px;
+}
+
+.letters-chat__item_svg path {
+  fill: #c3c3c3;
+}
+
+.letters-chat__item_svg:hover path {
+  fill: url(#SVGID_1_);
 }
 
 .letters-chat__text {
@@ -358,11 +371,19 @@ body, html {
   border-radius: 10px 0 0px 0px;
 }
 
+.header-list-chat.search-pad {
+  padding: 0 15px;
+}
+
 .header-list-chat__title {
   color: #222222;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.06px;
+}
+
+.header-list-chat__title.none {
+  display: none;
 }
 
 .header-list-chat__icons {
@@ -376,12 +397,16 @@ body, html {
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 84px;
-          flex: 0 1 84px;
+      -ms-flex: 0 1 116px;
+          flex: 0 1 116px;
 }
 
 .header-list-chat__icon {
   cursor: pointer;
+}
+
+.header-list-chat__icon.none {
+  display: none;
 }
 
 .header-list-chat__icon path {
@@ -391,8 +416,48 @@ body, html {
   height: 100%;
 }
 
+.header-list-chat__icon_none.none {
+  display: none;
+}
+
 .header-list-chat__icon:hover path {
   fill: url(#SVGID_1_);
+}
+
+.search {
+  display: block;
+}
+
+.search__body {
+  display: none;
+  position: relative;
+}
+
+.search__body.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search__input {
+  border-bottom: 1px solid #909090;
+  margin: 0 20px 0 0;
+}
+
+.search__input input {
+  width: 253px;
+  font-size: 13px;
+  color: #222222;
+  padding: 0 0 0 9px;
+}
+
+.search__input_b input {
+  width: 283px;
+}
+
+.search__btn {
+  color: transparent;
+  background-color: transparent;
 }
 
 .pad {
@@ -616,6 +681,12 @@ body, html {
   font-size: 6px;
 }
 
+.search__body-2.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header-item-chat {
   height: 44px;
   background-color: #ffffff;
@@ -647,8 +718,25 @@ body, html {
   margin: 0 25px 0 0;
 }
 
+.header-item-chat__search {
+  cursor: pointer;
+}
+
+.header-item-chat__search path {
+  fill: #c3c3c3;
+}
+
+.header-item-chat__search:hover path {
+  fill: url(#SVGID_1_);
+}
+
+.header-item-chat__search.open {
+  display: none;
+}
+
 .header-item-chat__info {
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .header-item-chat__info path {
@@ -1014,6 +1102,10 @@ body, html {
   cursor: pointer;
 }
 
+.content-chat-content__audio audio.stop::-webkit-media-controls-play-button {
+  background: url(../img/stop.png) center no-repeat;
+}
+
 .content-chat-content__audio audio::-webkit-media-controls-current-time-display {
   position: absolute;
   right: 36px;
@@ -1072,7 +1164,29 @@ body, html {
   border-radius: 50%;
   margin: 0 10px 0 0;
   cursor: pointer;
-  display: none;
+}
+
+.content-chat-content__audio_pause {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(219, 224, 228, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .content-chat-content__audio_line {
@@ -2691,5 +2805,16 @@ body, html {
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+}
+
+.close-search-1 {
+  right: auto;
+  top: 0px;
+  left: -10px;
+}
+
+.close-search-2 {
+  right: -22px;
+  top: 0px;
 }
 /*# sourceMappingURL=style.css.map */

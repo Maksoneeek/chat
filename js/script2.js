@@ -4,19 +4,19 @@ function restartTimer() {
 }
 
 function setTimer() {
-    let time = 0
-    const timerInput = document.querySelector('.micro__timer')
+	let time = 0
+	const timerInput = document.querySelector('.micro__timer')
 	timerInput.style.fontSize = 12 + 'px'
 	const stop = document.querySelector(time == 0)
-    const timer = setInterval(function () {
-        time = time + 1
-        let mins = Math.floor(time / 60)
-        let seconds = time % 60
-        if (seconds < 10) {
-            seconds = '0' + seconds
+	const timer = setInterval(function () {
+		time = time + 1
+		let mins = Math.floor(time / 60)
+		let seconds = time % 60
+		if (seconds < 10) {
+			seconds = '0' + seconds
 		}
-		document.querySelector('.micro__delete').addEventListener('click',restartTimer )
-        timerInput.textContent = `${mins}:${seconds}`
+		document.querySelector('.micro__delete').addEventListener('click', restartTimer)
+		timerInput.textContent = `${mins}:${seconds}`
 	}, 1000)
 	return false;
 }
@@ -47,12 +47,12 @@ const map = (typeof Map === "function") ? new Map() : (function () {
 	}
 })();
 
-let createEvent = (name)=> new Event(name, {bubbles: true});
+let createEvent = (name) => new Event(name, { bubbles: true });
 try {
 	new Event('test');
-} catch(e) {
+} catch (e) {
 	// IE does not support `new Event()`
-	createEvent = (name)=> {
+	createEvent = (name) => {
 		const evt = document.createEvent('Event');
 		evt.initEvent(name, true, false);
 		return evt;
@@ -76,9 +76,9 @@ function assign(ta) {
 		}
 
 		if (style.boxSizing === 'content-box') {
-			heightOffset = -(parseFloat(style.paddingTop)+parseFloat(style.paddingBottom));
+			heightOffset = -(parseFloat(style.paddingTop) + parseFloat(style.paddingBottom));
 		} else {
-			heightOffset = parseFloat(style.borderTopWidth)+parseFloat(style.borderBottomWidth);
+			heightOffset = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
 		}
 		// Fix when a textarea is not on document body and heightOffset is Not a Number
 		if (isNaN(heightOffset)) {
@@ -131,7 +131,7 @@ function assign(ta) {
 		const docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
 
 		ta.style.height = '';
-		ta.style.height = (ta.scrollHeight+heightOffset)+'px';
+		ta.style.height = (ta.scrollHeight + heightOffset) + 'px';
 
 		// used to check if an update is actually necessary on window.resize
 		clientWidth = ta.clientWidth;
@@ -276,6 +276,6 @@ if (typeof window === 'undefined' || typeof window.getComputedStyle !== 'functio
 }
 
 
-autosize( document.querySelectorAll('textarea') );
+autosize(document.querySelectorAll('textarea'));
 
 

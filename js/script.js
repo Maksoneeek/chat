@@ -3,6 +3,9 @@ $(document).ready(function () {
     $('.new-chat').click(function (event) {
         $('.popup-new').toggleClass('open');
     });
+    $('audio::-webkit-media-controls-play-button').click(function (event) {
+        $('.popup-new').toggleClass('open');
+    });
     $('.templates-open').click(function (event) {
         $('.templates').toggleClass('open');
         $('.templates').removeClass('templates-2');
@@ -20,6 +23,27 @@ $(document).ready(function () {
     });
     $('.close-new').click(function (event) {
         $('.popup-new').removeClass('open');
+    });
+    $('.close-search-1').click(function (event) {
+        $('.search__body-1').removeClass('open');
+        $('.header-list-chat__icon').removeClass('none');
+        $('.header-list-chat__title').removeClass('none');
+        $('.header-list-chat__icon_none').removeClass('none');
+        $('.header-list-chat').removeClass('search-pad');
+    });
+    $('.search-1').click(function (event) {
+        $('.search__body-1').addClass('open');
+        $('.header-list-chat__icon').addClass('none');
+        $('.header-list-chat__title').addClass('none');
+        $('.header-list-chat').addClass('search-pad');
+    });
+    $('.search-2').click(function (event) {
+        $('.search__body-2').addClass('open');
+        $('.header-item-chat__search').addClass('none');
+    });
+    $('.close-search-2').click(function (event) {
+        $('.search__body-2').removeClass('open');
+        $('.header-item-chat__search').removeClass('none');
     });
     $('.close-settings').click(function (event) {
         $('.settings').removeClass('open');
