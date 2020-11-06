@@ -40,10 +40,12 @@ $(document).ready(function () {
     $('.search-2').click(function (event) {
         $('.search__body-2').addClass('open');
         $('.header-item-chat__search').addClass('none');
+        $('.content-chat-content__arrows').addClass('open');
     });
     $('.close-search-2').click(function (event) {
         $('.search__body-2').removeClass('open');
         $('.header-item-chat__search').removeClass('none');
+        $('.content-chat-content__arrows').removeClass('open');
     });
     $('.close-settings').click(function (event) {
         $('.settings').removeClass('open');

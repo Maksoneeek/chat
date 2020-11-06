@@ -73,15 +73,19 @@ transition: 0.3s ease;
 
 	&__container {
 		max-width: 1326px;
+		height: calc(100vh - 117px);
 	}
 
 	&__row {
 		display: flex;
 		max-width: 1269px;
 		position: relative;
+		height: calc(100vh);
+		max-height: 792px;
 	}
 	&__item{
 		flex: 0 1 933px;
+		overflow-y: hidden;
 	}
 	&__list {
 	}
@@ -209,7 +213,7 @@ transition: 0.3s ease;
 			display: inline-block;
 			width: 8px;
 			height: 8px;
-			background: url(../img/plus.png) 0 0 no-repeat;
+			background: url(../img/plus-2.png) 0 0 no-repeat;
 			margin: 0 16px 0 4px;
 		}
 		cursor: pointer;
@@ -251,7 +255,7 @@ transition: 0.3s ease;
 	&__scroll{
 		overflow-y: scroll;
 		overflow-x: hidden;
-		height: 748px;
+		height: calc(100% - 44px);
 		position: relative;
 		border-radius: 0px 0 0px 10px;
 		border-bottom: 2px solid #f1f2f3;
@@ -610,7 +614,7 @@ overflow-x: hidden;
 	}
 }
 .content-chat-content {
-	height: 680px;
+	height:calc(100% - 112px);
 	width: 100%;
 }
 .footer-chat-item {
@@ -757,6 +761,10 @@ flex-direction: column-reverse;
 	&__message {
 		padding: 10px 0;
 		display: flex;
+		&_search{
+			background-color: rgba(119,50,137,0.05);
+			
+		}
 		&_container{
 			display: flex;
 			align-items: flex-start;
@@ -976,6 +984,7 @@ flex-direction: column-reverse;
 		font-weight: 400;
 		line-height: 19px;
 		position: relative;
+		z-index: 5;
 		span{
 			max-width: 335px;
 		}
@@ -990,9 +999,7 @@ flex-direction: column-reverse;
 			border-right:12px solid  #ffffff;
 			border-top: 8px solid transparent;
 			border-bottom: 8px solid transparent;
-			z-index: 2;
 			left: -11px;
-			
 		}
 		&_big{
 			max-width: 468px;
@@ -2259,4 +2266,56 @@ position: relative;
 .close-search-2{
 	right: -22px;
 	top: 0px;
+}
+.content-chat-content {
+
+	&__arrows {
+		position: absolute;
+		height: 90px;
+		right: 25px;
+		bottom: 88px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		display: none;
+		&.open{
+			display: flex;
+		}
+		&_item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			box-shadow: 0 0 24px rgba(4, 26, 55, 0.08);
+			background-color: #ffffff;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		&_item-up {
+		}
+
+		&_item-down {
+			background-color: #e7ebee;
+		}
+
+		&_number {
+			position: absolute;
+			left: -7px;
+			top: 18px;
+			transform: translate(0,-50%);
+			width: 18px;
+			height: 18px;
+			border: 2px solid #ffffff;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #c44475;
+			font-size: 10px;
+			font-weight: 500;
+			color: #ffffff;
+		}
+	}
 }
