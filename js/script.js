@@ -50,6 +50,10 @@ $(document).ready(function () {
     $('.close-settings').click(function (event) {
         $('.settings').removeClass('open');
     });
+    $('.item-list-chat').click(function (event) {
+        $('.list-chat').addClass('none');
+        $('.chat-item').addClass('block');
+    });
     $('.close-new-templates').click(function (event) {
         $('.new-templates').removeClass('open');
     });
@@ -75,7 +79,8 @@ $(document).ready(function () {
         $('.settings').addClass('open');
     });
     $('.papki').click(function (event) {
-        $('.chat').toggleClass('pad');
+        $('.chat__container').toggleClass('pad');
+        $('.letters-chat').toggleClass('open');
         $('.letters-chat__text,.letters-chat__new-chat').toggleClass('visible');
     });
     $('.letters-chat__new-chat-text').click(function (event) {
@@ -120,6 +125,7 @@ $(document).ready(function () {
         arrows: true,
         slidesToShow: 1,
         dots: false,
+        
         asNavFor: '.preview-chat__slider-small_item',
     });
 });
