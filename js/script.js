@@ -3,8 +3,18 @@ $(document).ready(function () {
     $('.new-chat').click(function (event) {
         $('.popup-new').toggleClass('open');
     });
-    $('audio::-webkit-media-controls-play-button').click(function (event) {
-        $('.popup-new').toggleClass('open');
+    $('.header-item-chat__exit_icon').click(function (event) {
+        $('.list-chat').removeClass('none-mobile');
+        $('.chat-item').removeClass('block');
+    });
+    $('.templates__search_btn-1').click(function (event) {
+        $('.templates__search-1').toggleClass('open');
+        $('.settings__header-bot_title').toggleClass('search');
+        $('.settings__header-bot_new-templates').toggleClass('search');
+    });
+    $('.templates__search_btn-2').click(function (event) {
+        $('.templates__title').toggleClass('search');
+        $('.templates__search-2').toggleClass('open');
     });
     $('.templates-open').click(function (event) {
         $('.templates').toggleClass('open');
@@ -51,7 +61,7 @@ $(document).ready(function () {
         $('.settings').removeClass('open');
     });
     $('.item-list-chat').click(function (event) {
-        $('.list-chat').addClass('none');
+        $('.list-chat').addClass('none-mobile');
         $('.chat-item').addClass('block');
     });
     $('.close-new-templates').click(function (event) {
@@ -62,7 +72,9 @@ $(document).ready(function () {
     });
     $('.info-open').click(function (event) {
         $('.info').toggleClass('open');
-        $('.content-chat-content').toggleClass('hidden');
+        $('.header-item-chat').toggleClass('header-item-chat-mobile');
+        $('.content-chat-content').toggleClass('info-pad');
+        $('.header-item-chat__line ').toggleClass('info');
     });
     $('.new-templates-open').click(function (event) {
         $('.new-templates').toggleClass('open');
@@ -125,7 +137,7 @@ $(document).ready(function () {
         arrows: true,
         slidesToShow: 1,
         dots: false,
-        
+
         asNavFor: '.preview-chat__slider-small_item',
     });
 });
@@ -136,8 +148,8 @@ $(document).ready(function () {
         dots: false,
         focusOnSelect: true,
         asNavFor: '.preview-chat__slider-big',
-        useCSS: 'false',
         useTransform: false,
+        respondTo: 'min',
     });
 });
 
