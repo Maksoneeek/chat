@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 body,html{
 	font-family: 'Montserrat',;
-	/* полоса прокрутки (скроллбар) */
+
 }
 .wrapper{
 	padding: 117px 0 0 163px;
@@ -56,6 +56,7 @@ position: relative;
 	background: transparent;
 	position: relative;
 	background-color: transparent;
+	margin: 0 10px 0 0;
   }
   
   /* ползунок скроллбара */
@@ -759,12 +760,27 @@ overflow-x: hidden;
 		align-items: center;
 		max-width: 625px;
 		width: 100%;
+		position: relative;
+		&_ta{
+			position: relative;
+			width: 100%;
+			&::after{
+				content: '';
+				width: 100%;
+				height: 1px;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				background-color: #d3d3d3;
+			}
+		}
 		textarea{
 			width: 100%;
 			resize: none;
 			height: 13px;
 			max-height: 45px;
 			margin: 0 23px 0 0; 
+			position: relative;
 		}
 		textarea::-webkit-scrollbar{
 			width: 0;
@@ -893,7 +909,6 @@ overflow-x: hidden;
 	}
 }
 
-
 .content-chat-content {
 padding: 15px 25px;
 background: url(../img/Slice_2.png);
@@ -999,16 +1014,15 @@ flex-direction: column-reverse;
 		align-items: center;
 		position: relative;
 		&::before{
-			content: '';
 			width: 75px;
 			height: 62px;
-			background-color: transparent;
+
 			position: absolute;
 			right: 0;
 			z-index: 2;
 		}
 		audio {
-			width: 310px;
+			width: 315px;
 			height: 30px;
 			background-color: #ffffff;
 			border-radius: 0;
@@ -1030,6 +1044,7 @@ flex-direction: column-reverse;
 				justify-content: center;
 				border-radius: 50%;
 				margin: 0 10px 0 0;
+				padding: 0;
 				cursor: pointer;		
 		}
 		audio.stop::-webkit-media-controls-play-button{
@@ -1039,39 +1054,34 @@ flex-direction: column-reverse;
 			position: absolute;
 			right: 36px;
 			background-color: white;
-			z-index: 2;
+			z-index: 6;
 			font-size: 12px;
 		}
 		audio::-webkit-media-controls-time-remaining-display{
 			position: absolute;
 			right: 0px;
 			background-color: white;
-			z-index: 2;
+			z-index: 6;
 			font-size: 12px;
 		}
 		audio::-webkit-media-controls-mute-button{
 			display: none;
 		}
 		audio::-webkit-media-controls-timeline{
-			width: 224px;
 			padding: 0;
+			max-width: 200px;
 		}
-		audio::-webkit-media-controls-seek-back-button{
+		audio::-webkit-media-controls-volume-control-hover-background{
 			display: none;
-		}
-		audio::-webkit-media-controls-toggle-closed-captions-button{
-			display: none;
-		}
-		audio::-webkit-media-controls-rewind-button{
-			display: none;
-		}
-		audio::-webkit-media-controls-volume-container{
-			display: none;
-			width: 0px;
 		}
 		audio::-webkit-media-controls-volume-slider{
-			
+			display: none;
 		}
+		audio::-webkit-media-controls-volume-control-container{
+			display: none;
+		}
+
+		
 		&_icon{
 			width: 32px;
 			height: 32px;
@@ -1137,7 +1147,7 @@ flex-direction: column-reverse;
 		border: 1px solid #e5e5e5;
 		background-color: #ffffff;
 		max-width: 378px;
-		border-radius: 5px;
+		border-radius:0px 5px 5px 5px;
 		padding: 15px 19px;
 		color:#222222;
 		font-size: 13px;
@@ -1149,16 +1159,13 @@ flex-direction: column-reverse;
 		}
 		&::before{
 			content: '';
-			width: 0;
-			height: 0;
+			width: 13px;
+			height: 15px;
 			position: absolute;
-			top: 0px;
-			left: 0;
-			border: 1px solid transparent;
-			border-right:12px solid  #ffffff;
-			border-top: 8px solid transparent;
-			border-bottom: 8px solid transparent;
-			left: -11px;
+			left: -12px;
+			top: -2px;
+			background:url(../img/slice11.png) ;
+			background-color: transparent;
 		}
 		&_big{
 			max-width: 468px;
@@ -1235,7 +1242,6 @@ flex-direction: column-reverse;
 }
 .sender {
 }
-
 .recipient {
 	justify-content: flex-end;
 	.content-chat-content__message_container{
@@ -1250,10 +1256,10 @@ flex-direction: column-reverse;
 	.content-chat-content__item{
 		&::before{
 			left: auto;
-			right: -11px;
-			border-right: 0px;
-			border-left:12px solid  #ffffff;;
+			right: -12px;
+			background: url(../img/slice13.png);
 		}
+		background-color: #f1ffef;
 	}
 	.content-chat-content__nosend_item{
 		right: auto;
@@ -1261,8 +1267,10 @@ flex-direction: column-reverse;
 	}
 	.content-chat-content__nosend{
 		&::before{
-			border-left:12px solid  #ffcdda;
+			background: url(../img/slice12.png);
+			transform: rotate3d(0,0,0, 0deg);
 		}
+		background-color: #ffcdda;
 	}
 	@media (max-width:767px){
 		.content-chat-content__message_container{
@@ -2615,13 +2623,11 @@ position: relative;
 	}
 }
 .content-chat-content {
-
-
-
 	&__nosend {
 		background-color: #ffcdda;
 		&::before{
-			border-right: 12px solid #ffcdda;
+			background: url(../img/slice12.png);
+			transform: rotate3d(0,1,0, 180deg);
 		}
 		&_text {
 		}

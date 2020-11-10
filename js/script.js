@@ -150,6 +150,7 @@ $(document).ready(function () {
         asNavFor: '.preview-chat__slider-big',
         useTransform: false,
         respondTo: 'min',
+        autoWidth:true,
     });
 });
 
