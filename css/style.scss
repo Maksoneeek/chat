@@ -756,7 +756,7 @@ overflow-x: hidden;
 		font-size: 13px;
 		font-weight: 400;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		max-width: 625px;
 		width: 100%;
@@ -764,6 +764,7 @@ overflow-x: hidden;
 		&_ta{
 			position: relative;
 			width: 100%;
+			max-width: 580px;
 			&::after{
 				content: '';
 				width: 100%;
@@ -1164,7 +1165,7 @@ flex-direction: column-reverse;
 			position: absolute;
 			left: -12px;
 			top: -2px;
-			background:url(../img/slice11.png) ;
+			background:url(../img/slice111.png);
 			background-color: transparent;
 		}
 		&_big{
@@ -1190,7 +1191,7 @@ flex-direction: column-reverse;
 		}
 		&__icon {
 			position: absolute;
-			top: 30px;
+			top: 19px;
 			left: 0px;
 		}
 		padding: 15px 10px;
@@ -1206,10 +1207,7 @@ flex-direction: column-reverse;
 			}
 		}
 		audio::-webkit-media-controls-timeline{
-			input{
-			width: 157px;
-			padding: 0;
-			}
+			max-width: 80px;
 		}
 		audio {
 			width: 240px;
@@ -1257,7 +1255,8 @@ flex-direction: column-reverse;
 		&::before{
 			left: auto;
 			right: -12px;
-			background: url(../img/slice13.png);
+			background: url(../img/slice111.png);
+			transform: rotate3d(0, 1, 0, 180deg);
 		}
 		background-color: #f1ffef;
 	}
@@ -1267,7 +1266,7 @@ flex-direction: column-reverse;
 	}
 	.content-chat-content__nosend{
 		&::before{
-			background: url(../img/slice12.png);
+			background: url(../img/slice122.png);
 			transform: rotate3d(0,0,0, 0deg);
 		}
 		background-color: #ffcdda;
@@ -2626,7 +2625,7 @@ position: relative;
 	&__nosend {
 		background-color: #ffcdda;
 		&::before{
-			background: url(../img/slice12.png);
+			background: url(../img/slice122.png);
 			transform: rotate3d(0,1,0, 180deg);
 		}
 		&_text {

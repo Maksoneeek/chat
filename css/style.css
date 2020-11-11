@@ -967,9 +967,9 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -981,6 +981,7 @@ body, html {
 .footer-chat-item__input_ta {
   position: relative;
   width: 100%;
+  max-width: 580px;
 }
 
 .footer-chat-item__input_ta::after {
@@ -1480,7 +1481,7 @@ body, html {
   position: absolute;
   left: -12px;
   top: -2px;
-  background: url(../img/slice11.png);
+  background: url(../img/slice111.png);
   background-color: transparent;
 }
 
@@ -1508,7 +1509,7 @@ body, html {
   }
   .content-chat-content__icon {
     position: absolute;
-    top: 30px;
+    top: 19px;
     left: 0px;
   }
   .content-chat-content__item {
@@ -1521,9 +1522,8 @@ body, html {
   .content-chat-content__item_big video {
     width: 100%;
   }
-  .content-chat-content audio::-webkit-media-controls-timeline input {
-    width: 157px;
-    padding: 0;
+  .content-chat-content audio::-webkit-media-controls-timeline {
+    max-width: 80px;
   }
   .content-chat-content audio {
     width: 240px;
@@ -1586,7 +1586,9 @@ body, html {
 .recipient .content-chat-content__item::before {
   left: auto;
   right: -12px;
-  background: url(../img/slice13.png);
+  background: url(../img/slice111.png);
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+          transform: rotate3d(0, 1, 0, 180deg);
 }
 
 .recipient .content-chat-content__nosend_item {
@@ -1599,7 +1601,7 @@ body, html {
 }
 
 .recipient .content-chat-content__nosend::before {
-  background: url(../img/slice12.png);
+  background: url(../img/slice122.png);
   -webkit-transform: rotate3d(0, 0, 0, 0deg);
           transform: rotate3d(0, 0, 0, 0deg);
 }
@@ -3278,7 +3280,7 @@ body, html {
 }
 
 .content-chat-content__nosend::before {
-  background: url(../img/slice12.png);
+  background: url(../img/slice122.png);
   -webkit-transform: rotate3d(0, 1, 0, 180deg);
           transform: rotate3d(0, 1, 0, 180deg);
 }
